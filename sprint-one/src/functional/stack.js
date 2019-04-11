@@ -16,10 +16,10 @@ var Stack = function() {
   someInstance.pop = function() {
   // Remove from the top (removes largest index)
     var toBePopped = storage[count - 1];
-    if (count > 0){
+    if (count > 0) {
       delete storage[count - 1];
       count--;
-    };
+    }
     return toBePopped;
   };
 
