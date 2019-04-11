@@ -5,8 +5,6 @@ var Queue = function() {
   this.count = 0;
 };
 
-// var queueMethods = {};
-
 Queue.prototype.enqueue = function(value) {
   this.storage[this.count] = value;
   this.count++;
