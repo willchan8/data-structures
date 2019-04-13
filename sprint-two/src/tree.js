@@ -23,7 +23,6 @@ treeMethods.addChild = function(value) {
 // C - must be linear time complexity!
 // E - invalid inputs, tree only contains one node, tree = undefined
 treeMethods.contains = function(target) {
-  debugger;
   if (this.value === target) {
     return true;
   }

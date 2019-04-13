@@ -11,24 +11,34 @@
 //   limitedArray.set(3, 'hi');
 //   limitedArray.get(3); // returns 'hi'
 
-var LimitedArray = function(limit) {
+var LimitedArray = function(limit) { 
   var storage = [];
 
-  var limitedArray = {};
+  var limitedArray = {}; // has three methods (see below)
+
+  // 'get' returns the buckets (storage's index)
   limitedArray.get = function(index) {
     checkLimit(index);
     return storage[index];
   };
+
+  // inputs: 
+  // index (index of the storage (bucket))
+  // value (array)
+  // sets the value (bucket) at a given storage's index
   limitedArray.set = function(index, value) {
     checkLimit(index);
     storage[index] = value;
   };
+
+  // performs a callback on each item of storage array
   limitedArray.each = function(callback) {
     for (var i = 0; i < storage.length; i++) {
       callback(storage[i], i, storage);
     }
   };
 
+  // makes sure index does not go beyond storage limit by throwing error
   var checkLimit = function(index) {
     if (typeof index !== 'number') {
       throw new Error('setter requires a numeric index for its first argument');
